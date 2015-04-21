@@ -1,0 +1,55 @@
+<script language="VBScript">
+    Sub Window_onLoad
+        window.resizeTo 300,300
+    End Sub
+</script>
+<script language="javascript">
+    function Writedata() {
+        var fso = new ActiveXObject("Scripting.FileSystemObject");
+        var writeId = document.getElementById('fileId').value;
+        var s = fso.CreateTextFile(writeId, true);
+
+
+        s.WriteLine("Imie: " + document.getElementById('nameId').value);
+        s.WriteLine("Nazwisko: " + document.getElementById('surnameId').value);
+        s.WriteLine("Data urodzenia: " + document.getElementById('birthId').value);
+
+        s.Close();
+    }
+</script>
+
+<html>
+<head>
+    <title>Aplikacja HTA</title>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>Imiê:</td>
+                <td>
+                    <input type="text" name="name" id="nameId"></td>
+            </tr>
+            <tr>
+                <td>Nazwisko:</td>
+                <td>
+                    <input type="text" name="surname" id="surnameId"></td>
+            </tr>
+            <tr>
+                <td>Data urodzenia:</td>
+                <td>
+                    <input type="text" name="birth" id="birthId"></td>
+            </tr>
+            <tr>
+                <td>Lokalizacja pliku:</td>
+                <td>
+                    <input type="text" name="filename" id="fileId"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" onclick=" Writedata() " value="OK"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>

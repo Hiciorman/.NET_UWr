@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>2.1.1</name>
+    </assembly>
+    <members>
+        <member name="T:_2._1._1.Algorytm">
+            <summary>
+            Klasa zawiera algorytm do sprawdzania czy liczba x 
+            jest podzielna przez sumę swoich składników oraz przez każdy składnik z osobna
+            </summary>
+        </member>
+        <member name="M:_2._1._1.Algorytm.Sprawdz(System.Int32)">
+            <summary>
+            Metoda sprawdza czy podana liczba spełnia warunki
+            </summary>
+            <param name="x">Liczba do sprawdzenia</param>
+            <returns>True jeśli x spełnia warunki</returns>
+        </member>
+        <member name="M:_2._1._1.Algorytm.Wypisz">
+            <summary>
+            Metoda wypisuje liczby które spełniają warunki
+            </summary>
+        </member>
+        <member name="T:_2._1._1.Program">
+            <summary>
+            Klasa startowa programu
+            </summary>
+        </member>
+    </members>
+</doc>

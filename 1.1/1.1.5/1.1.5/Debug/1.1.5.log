@@ -1,0 +1,15 @@
+﻿Build started 2015-03-08 22:32:27.
+     1>Project "E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\1.1\1.1.5\1.1.5\1.1.5.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Programy2\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Main.c
+         Main.c
+     1>e:\onedrive\studia\kurs programowania windows .net\programy\1.1\1.1.5\1.1.5\main.c(92): warning C4047: 'function' : 'LPARAM' differs in levels of indirection from 'int [4]'
+     1>e:\onedrive\studia\kurs programowania windows .net\programy\1.1\1.1.5\1.1.5\main.c(92): warning C4024: 'SendMessageA' : different types for formal and actual parameter 4
+       Link:
+         E:\Programy2\Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\1.1\1.1.5\Debug\1.1.5.exe" /INCREMENTAL /NOLOGO comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\1.1\1.1.5\Debug\1.1.5.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\1.1\1.1.5\Debug\1.1.5.lib" /MACHINE:X86 Debug\Main.obj
+         1.1.5.vcxproj -> E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\1.1\1.1.5\Debug\1.1.5.exe
+     1>Done Building Project "E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\1.1\1.1.5\1.1.5\1.1.5.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.75

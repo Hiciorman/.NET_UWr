@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="c12544a4-0500-43ef-b68c-0306d1d60fda" Title="_2._1._5" Url="html/4fd5b289-86f2-0eab-449c-f5443773de04.htm">
+    <HelpTOCNode Id="15135fe9-d205-48b8-9dc5-3460cfc87120" Title="Algorytm Class" Url="html/1af91fe4-bbfb-a583-81a1-13dfc8a0b340.htm">
+      <HelpTOCNode Title="Algorytm Constructor " Url="html/bd3f52d8-ad26-bc72-3fff-c96c1602fae5.htm" />
+      <HelpTOCNode Id="0412db20-fa5b-4ff4-a218-957e83d4ea89" Title="Algorytm Methods" Url="html/01a87aa4-835e-f3de-b52f-057d6fb8c310.htm">
+        <HelpTOCNode Title="Wypisz Method " Url="html/a594be2d-cfd1-97cf-29e2-d79ca46481f2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
