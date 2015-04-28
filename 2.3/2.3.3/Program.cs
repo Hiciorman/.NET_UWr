@@ -19,6 +19,9 @@ namespace _2._3._3
             DisplayList(people);
 
             //Comparison
+            people.Sort(delegate(Person p1, Person p2){
+                return p1.Age.CompareTo(p2.Age);
+            });
             people.Sort(Person.CompareByAge);
             DisplayList(people);
 
