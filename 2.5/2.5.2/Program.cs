@@ -11,6 +11,12 @@ namespace _2._5._2
     {
         static void Main(string[] args)
         {
+            Type t = Type.GetTypeFromProgID("Word.Application");
+            dynamic w = Activator.CreateInstance(t);
+
+            w.Visible = true;
+            w.Documents.Add();
+
             Word.Application word = new Word.Application();
             word.ShowAnimation = false;
             word.Visible = false;
