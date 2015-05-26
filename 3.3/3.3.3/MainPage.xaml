@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="_3._3._3.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_3._3._3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Pin" Label="Pin" Click="AppBarButton_Click"/>
+                <AppBarButton Icon="Emoji" Label="Emoji" Click="AppBarButton_Click_1"/>
+            </CommandBar.PrimaryCommands>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label=".NET" Click="AppBarButton_Click_2"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    
+    <StackPanel>
+        <ProgressBar Width="Auto" Height="40" Value="44"/>
+        <ProgressRing IsActive="True" />
+        <TimePicker Header="Pick Date:"/>
+        <Slider Value="66"/>
+        <ListView Name="listView">
+            <ListView.ItemTemplate>
+            <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontSize="30" Text="{Binding}"/>
+                        <ToggleSwitch OffContent="" OnContent=""/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
+</Page>
