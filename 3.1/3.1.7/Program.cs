@@ -12,6 +12,7 @@ namespace _3._1._7
     {
         static void Main(string[] args)
         {
+            //Beter use events 
             Timer timer = new Timer(2000);
             timer.Elapsed += new ElapsedEventHandler(SendMessages);
             timer.Enabled = true;
@@ -19,7 +20,8 @@ namespace _3._1._7
 
             Timer timer2 = new Timer(3000);
             timer2.Elapsed += new ElapsedEventHandler(ReadMessages);
-            timer.Enabled = true;
+            timer2.Enabled = true;
+            timer2.Interval = 1000;
 
             Console.WriteLine("Press the Enter key to exit the program.");
             Console.ReadLine();
@@ -52,8 +54,10 @@ namespace _3._1._7
             System.Messaging.Message[] messages = messageQueue.GetAllMessages();
             foreach (Message message in messages)
             {
-                Console.WriteLine(message.Label);
+                Console.WriteLine(message.BodyStream.Length);
             }
+
+            Console.ReadKey();
         }
     }
 

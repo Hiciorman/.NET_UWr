@@ -13,53 +13,94 @@ namespace _3._1._3
     {
         static void Main(string[] args)
         {
-            string textFilePath = @"..\..\File.txt";
-
-            FileInfo fileToCompress = new FileInfo(textFilePath);
-            Compress(fileToCompress);
-
-
-            string directoryPath = @"..\..\";
-
-            DirectoryInfo directorySelected = new DirectoryInfo(directoryPath);
-
-    
-
-            foreach (FileInfo fileToDecompress in directorySelected.GetFiles("*.gz"))
+            FileInfo outFile = new FileInfo(@"..\..\FileOut.txt");
+            using (AesCryptoServiceProvider aes = new AesCryptoServiceProvider())
             {
-                Decompress(fileToDecompress);
+                // Encryption
+                string text = File.ReadAllText(@"..\..\File.txt");
+                byte[] encrypted = Encrypt(text, aes.Key, aes.IV);
+                Compress(outFile, encrypted);
+                // Decryption
+                byte[] encryptedText = Decompress(outFile);
+                text = Decrypt(encryptedText, aes.Key, aes.IV);
             }
-
             Console.ReadKey();
         }
 
-        public static void Compress(FileInfo fileToCompress)
+        static byte[] Encrypt(string text, byte[] key, byte[] IV)
         {
-            FileStream originalFileStream = fileToCompress.OpenRead();
-            FileStream compressedFileStream = File.Create(fileToCompress.FullName + ".gz");
-
-            GZipStream compressionStream = new GZipStream(compressedFileStream, CompressionMode.Compress);
-
-            originalFileStream.CopyTo(compressionStream);
-            Console.WriteLine("Compressed {0} from {1} to {2} bytes.", fileToCompress.Name, fileToCompress.Length.ToString(), compressedFileStream.Length.ToString());
-        }
-
-        public static void Decompress(FileInfo fileToDecompress)
-        {
-            using (FileStream originalFileStream = fileToDecompress.OpenRead())
+            byte[] encrypted;
+            using (AesCryptoServiceProvider aes = new AesCryptoServiceProvider())
             {
-                string currentFileName = fileToDecompress.FullName;
-                string newFileName = currentFileName.Remove(currentFileName.Length - fileToDecompress.Extension.Length);
-
-                using (FileStream decompressedFileStream = File.Create(newFileName))
+                aes.Key = key;
+                aes.IV = IV;
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+                using (MemoryStream msEncrypt = new MemoryStream())
                 {
-                    using (GZipStream decompressionStream = new GZipStream(originalFileStream, CompressionMode.Decompress))
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
                     {
-                        decompressionStream.CopyTo(decompressedFileStream);
-                        Console.WriteLine("Decompressed: {0}", fileToDecompress.Name);
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            swEncrypt.Write(text);
+                        }
+                        encrypted = msEncrypt.ToArray();
                     }
                 }
             }
+            return encrypted;
+        }
+
+        static string Decrypt(byte[] text, byte[] key, byte[] IV)
+        {
+            string result;
+            using (AesCryptoServiceProvider aes = new AesCryptoServiceProvider())
+            {
+                aes.Key = key;
+                aes.IV = IV;
+                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+                using (MemoryStream msDecrypt = new MemoryStream(text))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            result = srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
+        public static void Compress(FileInfo file, byte[] text)
+        {
+            using (FileStream fs = file.Open(FileMode.OpenOrCreate))
+            {
+                using (GZipStream gzs = new GZipStream(fs, CompressionMode.Compress))
+                {
+                    gzs.Write(text, 0, text.Length);
+                }
+            }
+        }
+
+        public static byte[] Decompress(FileInfo file)
+        {
+            byte[] result;
+            using (FileStream fs = file.Open(FileMode.Open))
+            {
+                using (GZipStream gzs = new GZipStream(fs, CompressionMode.Decompress))
+                {
+                    using (StreamReader reader = new StreamReader(gzs))
+                    {
+                        using (MemoryStream memStream = new MemoryStream())
+                        {
+                            reader.BaseStream.CopyTo(memStream);
+                            result = memStream.ToArray();
+                        }
+                    }
+                }
+            }
+            return result;
         }
     }
 }
