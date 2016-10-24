@@ -1,6 +1,0 @@
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\C-Sharp\2.2.1\2.2.1\bin\Debug\2.2.1.exe.config
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\C-Sharp\2.2.1\2.2.1\bin\Debug\2.2.1.exe
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\C-Sharp\2.2.1\2.2.1\bin\Debug\2.2.1.pdb
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\C-Sharp\2.2.1\2.2.1\obj\Debug\2.2.1.csprojResolveAssemblyReference.cache
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\C-Sharp\2.2.1\2.2.1\obj\Debug\2.2.1.exe
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\C-Sharp\2.2.1\2.2.1\obj\Debug\2.2.1.pdb

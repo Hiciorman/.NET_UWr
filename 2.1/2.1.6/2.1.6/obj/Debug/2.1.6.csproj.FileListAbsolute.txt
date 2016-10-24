@@ -1,5 +1,0 @@
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\2.1.6\2.1.6\bin\Debug\2.1.6.exe.config
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\2.1.6\2.1.6\bin\Debug\2.1.6.exe
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\2.1.6\2.1.6\bin\Debug\2.1.6.pdb
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\2.1.6\2.1.6\obj\Debug\2.1.6.exe
-E:\OneDrive\Studia\Kurs Programowania Windows .NET\Programy\2.1\2.1.6\2.1.6\obj\Debug\2.1.6.pdb
